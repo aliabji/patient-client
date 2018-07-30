@@ -36,10 +36,11 @@ class Patient extends React.Component {
             <div className="home">
                 <header className="home-header">
                 </header>
-                <p>Patient</p>
+                <p>Add New Patient</p>
                 <button onClick={this.showState}>Show state</button>
-                {this.state.encounters.map(p => <li key={p.id}>{p.visit_number}, {p.admitted_at}, {p.discharged_at ? p.discharged_at : "No discharge time specified"} 
-                </li>)}
+                <form>
+                    <input type="text" name="first" placeholder="First Name"/>
+                </form>
             </div>
         )
     }
