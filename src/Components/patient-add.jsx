@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
 
 class AddPatient extends React.Component {
     constructor(props) {
@@ -117,6 +117,7 @@ class AddPatient extends React.Component {
                         <input type="number" name="MRN" placeholder="MRN" value={this.state.MRN} onChange={this.mrnChange} required />
                     </label>
                     <button>Send data!</button>
+                    <Link to={'/'} >Cancel and return home</Link>
                 </form>
             </div>
         )

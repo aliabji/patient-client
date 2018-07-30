@@ -17,12 +17,17 @@ class EncounterDetails extends React.Component {
         console.log(this.props.location.state)
     }
 
+    goBack = () => {
+        this.props.history.goBack();
+    }
+
     render() {
         return(
             <div className="home">
                 <header className="home-header">
                 </header>
-                <p>Patient</p>
+                <h2>Encounter Details</h2>
+                <button onClick={this.goBack}>Go Back</button>
                 <button onClick={this.showState}>Show state</button>
                 <table>
                     <thead>
@@ -44,7 +49,7 @@ class EncounterDetails extends React.Component {
                             <td>{this.props.location.state.encounter.bed ? this.props.location.state.encounter.bed : "No bed specified"}</td>
                             <td>
                                 <Link to={{pathname: `/encounter/edit/${this.props.location.state.encounter.id}`, state: {encounter: this.props.location.state.encounter}}}>Edit</Link>
-                                <Link to={{pathname: `/encounter/${this.props.location.state.encounter.id}/delete`, state: {encounter: this.props.location.state.encounter, type: "encounter"}}}>Delete</Link>
+                                <Link to={{pathname: `/encounter/${this.props.location.state.encounter.id}/delete`, state: {encounter: this.props.location.state.encounter, type: "encounter"}}}>Destroy</Link>
                             </td>
                         </tr>
                     </thead>

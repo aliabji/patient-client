@@ -42,7 +42,7 @@ class EncounterDelete extends React.Component {
     }
 
     cancel = () => {
-        this.props.history.push(`/encounter/${this.props.location.state.encounter.id}`)
+        this.props.history.push(`/`)
     }
 
     render() {

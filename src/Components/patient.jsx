@@ -75,9 +75,9 @@ class Patient extends React.Component {
                             <td>{p.admitted_at}</td>
                             <td>{p.discharged_at ? p.discharged_at : "No discharge time specified"}</td>
                             <td>
-                                <Link to={{pathname: `/encounter/${p.id}`, state: {encounter: p}}}>Details</Link>
+                                <Link to={{pathname: `/encounter/${p.id}`, state: {encounter: p}}}>Show</Link>
                                 <Link to={{pathname: `/encounter/edit/${p.id}`, state: {encounter: p}}}>Edit</Link>
-                                <Link to={{pathname: `/encounter/${p.id}/delete`, state: {encounter: p, type: "encounter"}}}>Delete</Link>
+                                <Link to={{pathname: `/encounter/${p.id}/delete`, state: {encounter: p, type: "encounter"}}}>Destroy</Link>
                             </td>
                         </tr>)}
                     </thead>
