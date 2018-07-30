@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
 import '../styles/app.scss'
 
 class EncounterAdd extends React.Component {
@@ -94,8 +94,8 @@ class EncounterAdd extends React.Component {
 
     render() {
         return(
-            <div className="patient-add">
-                <p>Add New Patient</p>
+            <div>
+                <h2>Add a new encounter</h2>
                 <button onClick={this.showState}>Show state</button>
                 <form onSubmit={this.handleSubmit}>
                     <label>
@@ -123,6 +123,7 @@ class EncounterAdd extends React.Component {
                         <input type="text" name="bed" placeholder="Bed" value={this.state.bed} onChange={this.bedChange} />
                     </label>
                     <button>Send data!</button>
+                    <Link to={{pathname: `/patient/${this.props.location.state}`}}>Cancel and return to Patient overview</Link>
                 </form>
             </div>
         )

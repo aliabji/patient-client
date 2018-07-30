@@ -49,6 +49,7 @@ class Patient extends React.Component {
                             <th>Weight in KG</th>
                             <th>Height in CM</th>
                             <th>MRN</th>
+                            <th>Actions</th>
                         </tr>
                         <tr>
                             <td>{this.state.patient.first}</td>
@@ -57,6 +58,7 @@ class Patient extends React.Component {
                             <td>{this.state.patient.weight}</td>
                             <td>{this.state.patient.height}</td>
                             <td>{this.state.patient.MRN}</td>
+                            <td><Link to={{pathname: `/patient/${this.state.patient.id}/delete`, state: this.state.patient}}>delete</Link></td>
                         </tr>
                     </thead>
                 </table>
