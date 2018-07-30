@@ -26,18 +26,9 @@ class Patient extends React.Component {
         })
     }
 
-    showState = () => {
-        console.log(this.state.patient, this.state.encounters)
-        console.log(this.props.match.params.number)
-
-    }
-
     render() {
         return(
-            <div className="home">
-                <header className="home-header">
-                </header>
-                <button onClick={this.showState}>Show state</button>
+            <div>
                 <h3>Patient Details</h3>
                 <Link to={'/'} >Home</Link>
                 <table>

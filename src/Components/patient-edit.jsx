@@ -66,10 +66,6 @@ class PatientEdit extends React.Component {
         })
     }
 
-    showState = () => {
-        console.log(this.state)
-    }
-
     handleSubmit = (event) => {
         event.preventDefault();
         let form = {
@@ -101,10 +97,9 @@ class PatientEdit extends React.Component {
 
     render() {
         return(
-            <div className="patient-add">
+            <div>
                 <h2>Edit Patient</h2>
                 <Link to={'/'} >Home</Link>
-                <button onClick={this.showState}>Show state</button>
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         First Name (Required):

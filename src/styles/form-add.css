@@ -1,0 +1,16 @@
+.form {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-field {
+    display: inline-block;
+    margin:10px 0 0 2%;
+    flex-grow: 1;
+    height:100px;
+    width: calc(100% * (1/7));
+}
+
+form {
+    width: 100%
+}

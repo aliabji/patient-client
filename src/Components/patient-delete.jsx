@@ -16,10 +16,6 @@ class PatientDelete extends React.Component {
         console.log(this.props.location.state)
     }
 
-    showState = () => {
-        console.log(this.props.location)
-    }
-
     deleteEntry = () => {
         console.log(`http://localhost:3000/patients/${this.props.location.state.id}`)
         fetch(`http://localhost:3000/patients/${this.props.location.state.id}`, {
@@ -46,11 +42,8 @@ class PatientDelete extends React.Component {
 
     render() {
         return(
-            <div className="home">
-                <header className="home-header">
-                </header>
+            <div>
                 <h2>Are you sure you would like to delete this patient?</h2>
-                <button onClick={this.showState}>Show state</button>
                 <button onClick={this.deleteEntry}>Confirm - Delete Entry</button>
                 <button onClick={this.cancel}>Cancel</button>
             </div>

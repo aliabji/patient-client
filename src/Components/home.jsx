@@ -21,17 +21,10 @@ class Home extends React.Component {
         })
     }
 
-    showState = () => {
-        console.log(this.state.patients)
-    }
-
     render() {
         return(
             <div className="home">
-                <header className="home-header">
-                </header>
-                <p>Home</p>
-                <button onClick={this.showState}>Show state</button>
+                <h2>Welcome to Patient Organizer!</h2>
                 <Link to={{pathname: '/add/patient'}}>Click here to add a new patient</Link>
                 <table className="home-table">
                     <thead>

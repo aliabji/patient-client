@@ -69,10 +69,6 @@ class EncounterDetails extends React.Component {
         })
     }
 
-    showState = () => {
-        console.log(this.props.location.state)
-    }
-
     handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.props.location.state)
@@ -108,7 +104,6 @@ class EncounterDetails extends React.Component {
         return(
             <div>
                 <h2>Add a new encounter</h2>
-                <button onClick={this.showState}>Show state</button>
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Visit Number (Required):

@@ -54,11 +54,6 @@ class EncounterAdd extends React.Component {
         })
     }
 
-    showState = () => {
-        console.log(this.state)
-        console.log(this.props.location.state)
-    }
-
     handleSubmit = (event) => {
         event.preventDefault();
         let form = {
@@ -95,35 +90,48 @@ class EncounterAdd extends React.Component {
         return(
             <div>
                 <h2>Add a new encounter</h2>
-                <button onClick={this.showState}>Show state</button>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Visit Number (Required):
-                        <input type="number" name="visit_number" placeholder="Visit Number" value={this.state.visit_number} onChange={this.visitChange} required />
-                    </label>
-                    <label>
-                        Admitted At (Required):
-                        <input type="datetime-local" name="admitted_at" placeholder="Admitted At" value={this.state.admitted_at} onChange={this.admittedChange} required/>
-                    </label>
-                    <label>
-                        Discharged At:
-                        <input type="datetime-local" name="discharged_at" placeholder="Discharged Ar" value={this.state.discharged_at} onChange={this.dischargedChange}/>
-                    </label>
-                    <label>
-                        Location:
-                        <input type="text" name="location" placeholder="Location" value={this.state.location} onChange={this.locationChange}/>
-                    </label>
-                    <label>
-                        Room:
-                        <input type="text" name="room" placeholder="Room" value={this.state.room} onChange={this.roomChange}/>
-                    </label>
-                    <label>
-                        Bed:
-                        <input type="text" name="bed" placeholder="Bed" value={this.state.bed} onChange={this.bedChange} />
-                    </label>
-                    <button>Send data!</button>
-                    <Link to={{pathname: `/patient/${this.props.location.state}`}}>Cancel and return to Patient overview</Link>
-                </form>
+                <div className="form">
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="form-field">
+                            <label>
+                                Visit Number (Required):
+                                <input type="number" name="visit_number" placeholder="Visit Number" value={this.state.visit_number} onChange={this.visitChange} required />
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                Admitted At (Required):
+                                <input type="datetime-local" name="admitted_at" placeholder="Admitted At" value={this.state.admitted_at} onChange={this.admittedChange} required/>
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                Discharged At:
+                                <input type="datetime-local" name="discharged_at" placeholder="Discharged Ar" value={this.state.discharged_at} onChange={this.dischargedChange}/>
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                Location Attended:
+                                <input type="text" name="location" placeholder="Location" value={this.state.location} onChange={this.locationChange}/>
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                Room Occupied:
+                                <input type="text" name="room" placeholder="Room" value={this.state.room} onChange={this.roomChange}/>
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                Bed Occupied:
+                                <input type="text" name="bed" placeholder="Bed" value={this.state.bed} onChange={this.bedChange} />
+                            </label>
+                        </div>
+                        <button>Send data!</button>
+                        <Link to={{pathname: `/patient/${this.props.location.state}`}}>Cancel and return to Patient overview</Link>
+                    </form>
+                </div>
             </div>
         )
     }

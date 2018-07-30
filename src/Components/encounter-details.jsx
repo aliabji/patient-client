@@ -13,22 +13,15 @@ class EncounterDetails extends React.Component {
         
     }
 
-    showState = () => {
-        console.log(this.props.location.state)
-    }
-
     goBack = () => {
         this.props.history.goBack();
     }
 
     render() {
         return(
-            <div className="home">
-                <header className="home-header">
-                </header>
+            <div>
                 <h2>Encounter Details</h2>
                 <button onClick={this.goBack}>Go Back</button>
-                <button onClick={this.showState}>Show state</button>
                 <table>
                     <thead>
                         <tr>
