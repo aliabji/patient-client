@@ -6,40 +6,62 @@ class Patient extends React.Component {
     constructor(props) {
         super(props)
 
+        this.handleSubmit = this.handleSubmit.bind(this);
+
         this.state = {
             patient: {},
             encounters: []
         }
-        
-    }
-
-    componentDidMount(props) {
-        console.log(this.props.location.state)
-        console.log(`http://localhost:3000/patients/${this.props.location.state.id}`)
-        fetch(`http://localhost:3000/patients/${this.props.location.state.id}`).then((data) => {
-            return data.json()
-        }).then((data) => {
-            console.log(data)
-            this.setState({
-                patient: data.patient,
-                encounters: data.encounter
-            })
-        })
     }
 
     showState = () => {
-        console.log(this.state.patient, this.state.encounters)
+        console.log(this.state)
     }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        const data = new FormData(event.target);
+
+        console.log(data)
+        
+    //     fetch('/api/form-submit-url', {
+    //       method: 'POST',
+    //       body: data,
+    //     });
+      }
+    
 
     render() {
         return(
-            <div className="home">
-                <header className="home-header">
-                </header>
+            <div className="patient-add">
                 <p>Add New Patient</p>
                 <button onClick={this.showState}>Show state</button>
-                <form>
-                    <input type="text" name="first" placeholder="First Name"/>
+                <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="first">
+                        First Name (Required):
+                        <input type="text" name="first" id="first" placeholder="First Name"/>
+                    </label>
+                    <label htmlFor="middle">
+                        Middle Name (Required):
+                        <input type="text" name="middle" id="middle" placeholder="Middle Name"/>
+                    </label>
+                    <label>
+                        Last Name (Required):
+                        <input type="text" name="last" placeholder="Last Name"/>
+                    </label>
+                    <label>
+                        Weight in KG:
+                        <input type="number" name="weight" placeholder="Weight in KG"/>
+                    </label>
+                    <label>
+                        Height in CM:
+                        <input type="number" name="height" placeholder="Height in CM"/>
+                    </label>
+                    <label>
+                        MRN (Required):
+                        <input type="number" name="MRN" placeholder="MRN"/>
+                    </label>
+                    <button>Send data!</button>
                 </form>
             </div>
         )

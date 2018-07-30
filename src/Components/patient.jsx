@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 class Patient extends React.Component {
     constructor(props) {
@@ -38,8 +38,22 @@ class Patient extends React.Component {
                 </header>
                 <p>Patient</p>
                 <button onClick={this.showState}>Show state</button>
-                {this.state.encounters.map(p => <li key={p.id}>{p.visit_number}, {p.admitted_at}, {p.discharged_at ? p.discharged_at : "No discharge time specified"} 
-                </li>)}
+                <table>
+                    <tr>
+                        <th>Visit Number</th>
+                        <th>Admitted At</th>
+                        <th>Discharged At</th>
+                        <th>Actions</th>
+                    </tr>
+                    {this.state.encounters.map(p => <tr key={p.id}>
+                        <td>{p.visit_number}</td>
+                        <td>{p.admitted_at}</td>
+                        <td>{p.discharged_at ? p.discharged_at : "No discharge time specified"}</td>
+                        <td>
+                            <Link to={{pathname: `/encounter/${p.id}`, state: {encounter: p}}}>Encounter Details</Link>
+                        </td>
+                    </tr>)}
+                </table>
             </div>
         )
     }

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-class Delete extends React.Component {
+class EncounterDetails extends React.Component {
     constructor(props) {
         super(props)
 
@@ -21,26 +21,15 @@ class Delete extends React.Component {
         console.log(this.props.location.state)
     }
 
-    showType = () => {
-        if (this.props.location.state.encounter) {
-            return "encounter"
-        } else {
-            return "patient"
-        }
-    }
-
-    deleteEntry = () => {
-
-    }
-
     render() {
         return(
             <div className="home">
                 <header className="home-header">
                 </header>
-                <h2>Are you sure you would like to delete this {this.showType()}?</h2>
+                <p>Patient</p>
                 <button onClick={this.showState}>Show state</button>
-                
+                <Link to={{pathname: `/encounter/edit/${this.props.location.state.encounter.id}`, state: {encounter: this.props.location.state.encounter}}}>Encounter Edit</Link>
+                <Link to={{pathname: `/encounter/${this.props.location.state.encounter.id}/delete`, state: {encounter: this.props.location.state.encounter}}}>Encounter Delete</Link>
             </div>
         )
     }
@@ -48,4 +37,4 @@ class Delete extends React.Component {
 }
 
 
-export default Delete;
+export default EncounterDetails;

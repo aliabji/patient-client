@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-
 class Home extends React.Component {
     constructor(props) {
         super(props)
@@ -32,11 +31,22 @@ class Home extends React.Component {
                 </header>
                 <p>Home</p>
                 <button onClick={this.showState}>Show state</button>
-                <ul>
-                    {this.state.patients.map(p => <li key={p.id}>{p.first}, {p.last}, {p.MRN} 
-                    <Link to={{pathname: `/patient`, state: {id: p.id}}}>Patient Details</Link></li>)}
-                </ul>
-                
+                <Link to={'/patient/add'}>Click here to add a new patient</Link>
+                <table>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>MRN</th>
+                        <th>Patient Details</th>
+                    </tr>
+                    {this.state.patients.map(p => <tr key={p.id}>
+                        <td>{p.first}</td>
+                        <td>{p.last}</td>
+                        <td>{p.MRN}</td>
+                        <td><Link to={{pathname: `/patient/${p.id}`, state: {id: p.id}}}>Patient Details</Link></td>
+                    </tr>
+                    )}
+                </table>
             </div>
         )
     }
