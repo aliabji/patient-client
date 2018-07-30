@@ -37,9 +37,9 @@ class Patient extends React.Component {
             <div className="home">
                 <header className="home-header">
                 </header>
-                <p>Patient</p>
                 <button onClick={this.showState}>Show state</button>
                 <h3>Patient Details</h3>
+                <Link to={'/'} >Home</Link>
                 <table>
                     <thead>
                         <tr>
@@ -49,7 +49,6 @@ class Patient extends React.Component {
                             <th>Weight in KG</th>
                             <th>Height in CM</th>
                             <th>MRN</th>
-                            <th>Actions</th>
                         </tr>
                         <tr>
                             <td>{this.state.patient.first}</td>
@@ -58,7 +57,6 @@ class Patient extends React.Component {
                             <td>{this.state.patient.weight}</td>
                             <td>{this.state.patient.height}</td>
                             <td>{this.state.patient.MRN}</td>
-                            <td><Link to={{pathname: `/patient/${this.state.patient.id}/delete`, state: this.state.patient}}>delete</Link></td>
                         </tr>
                     </thead>
                 </table>
@@ -78,6 +76,8 @@ class Patient extends React.Component {
                             <td>{p.discharged_at ? p.discharged_at : "No discharge time specified"}</td>
                             <td>
                                 <Link to={{pathname: `/encounter/${p.id}`, state: {encounter: p}}}>Details</Link>
+                                <Link to={{pathname: `/encounter/edit/${p.id}`, state: {encounter: p}}}>Edit</Link>
+                                <Link to={{pathname: `/encounter/${p.id}/delete`, state: {encounter: p, type: "encounter"}}}>Delete</Link>
                             </td>
                         </tr>)}
                     </thead>

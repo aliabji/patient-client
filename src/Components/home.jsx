@@ -44,7 +44,10 @@ class Home extends React.Component {
                             <td>{p.first}</td>
                             <td>{p.last}</td>
                             <td>{p.MRN}</td>
-                            <td><Link to={{pathname: `/patient/${p.id}`, state: {id: p.id}}}>Details</Link></td>
+                            <td><Link to={{pathname: `/patient/${p.id}`, state: {id: p.id}}}>Show</Link>
+                                <Link to={{pathname: `/patient/${p.id}/edit`, state: p}}>Edit</Link>
+                                <Link to={{pathname: `/patient/${p.id}/delete`, state: p}}>Delete</Link>
+                            </td>
                         </tr>)}
                     </thead>
                 </table>

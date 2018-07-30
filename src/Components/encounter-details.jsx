@@ -13,10 +13,6 @@ class EncounterDetails extends React.Component {
         
     }
 
-    componentDidMount(props) {
-        console.log(this.props.location.state)
-    }
-
     showState = () => {
         console.log(this.props.location.state)
     }
