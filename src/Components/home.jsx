@@ -31,21 +31,22 @@ class Home extends React.Component {
                 </header>
                 <p>Home</p>
                 <button onClick={this.showState}>Show state</button>
-                <Link to={'/patient/add'}>Click here to add a new patient</Link>
+                <Link to={{pathname: '/add/patient'}}>Click here to add a new patient</Link>
                 <table>
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>MRN</th>
-                        <th>Patient Details</th>
-                    </tr>
-                    {this.state.patients.map(p => <tr key={p.id}>
-                        <td>{p.first}</td>
-                        <td>{p.last}</td>
-                        <td>{p.MRN}</td>
-                        <td><Link to={{pathname: `/patient/${p.id}`, state: {id: p.id}}}>Patient Details</Link></td>
-                    </tr>
-                    )}
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>MRN</th>
+                            <th>Actions</th>
+                        </tr>
+                        {this.state.patients.map(p => <tr key={p.id}>
+                            <td>{p.first}</td>
+                            <td>{p.last}</td>
+                            <td>{p.MRN}</td>
+                            <td><Link to={{pathname: `/patient/${p.id}`, state: {id: p.id}}}>Details</Link></td>
+                        </tr>)}
+                    </thead>
                 </table>
             </div>
         )

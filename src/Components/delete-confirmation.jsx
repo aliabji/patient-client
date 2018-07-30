@@ -30,7 +30,7 @@ class Delete extends React.Component {
     }
 
     deleteEntry = () => {
-
+        
     }
 
     render() {

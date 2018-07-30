@@ -26,10 +26,8 @@ class EncounterDetails extends React.Component {
             <div className="home">
                 <header className="home-header">
                 </header>
-                <p>Patient</p>
+                <h3>Edit Encounter</h3>
                 <button onClick={this.showState}>Show state</button>
-                <Link to={{pathname: `/encounter/edit/${this.props.location.state.encounter.id}`, state: {encounter: this.props.location.state.encounter}}}>Encounter Edit</Link>
-                <Link to={{pathname: `/encounter/${this.props.location.state.encounter.id}/delete`, state: {encounter: this.props.location.state.encounter}}}>Encounter Delete</Link>
             </div>
         )
     }
