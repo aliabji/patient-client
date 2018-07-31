@@ -128,8 +128,8 @@ class EncounterAdd extends React.Component {
                                 <input type="text" name="bed" placeholder="Bed" value={this.state.bed} onChange={this.bedChange} />
                             </label>
                         </div>
-                        <button>Send data!</button>
-                        <Link to={{pathname: `/patient/${this.props.location.state}`}}>Cancel and return to Patient overview</Link>
+                        <button>Submit</button>
+                        <Link to={{pathname: `/patient/${this.props.location.state}`}}><button>Cancel and return to Patient overview</button></Link>
                     </form>
                 </div>
             </div>

@@ -25,7 +25,7 @@ class Home extends React.Component {
         return(
             <div className="home">
                 <h2>Welcome to Patient Organizer!</h2>
-                <Link to={{pathname: '/add/patient'}}>Click here to add a new patient</Link>
+                <Link to={{pathname: '/add/patient'}}><button>Click here to add a new patient</button></Link>
                 <table className="home-table">
                     <thead>
                         <tr>
@@ -38,9 +38,9 @@ class Home extends React.Component {
                             <td>{p.MRN}</td>
                             <td>{p.first}</td>
                             <td>{p.last}</td>
-                            <td><Link to={{pathname: `/patient/${p.id}`, state: {id: p.id}}}>Show</Link>
-                                <Link to={{pathname: `/patient/${p.id}/edit`, state: p}}>Edit</Link>
-                                <Link to={{pathname: `/patient/${p.id}/delete`, state: p}}>Destroy</Link>
+                            <td><Link to={{pathname: `/patient/${p.id}`, state: {id: p.id}}}><button>Show</button></Link>
+                                <Link to={{pathname: `/patient/${p.id}/edit`, state: p}}><button>Edit</button></Link>
+                                <Link to={{pathname: `/patient/${p.id}/delete`, state: p}}><button>Destroy</button></Link>
                             </td>
                         </tr>)}
                     </thead>

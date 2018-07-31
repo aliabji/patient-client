@@ -30,7 +30,7 @@ class Patient extends React.Component {
         return(
             <div>
                 <h3>Patient Details</h3>
-                <Link to={'/'} >Home</Link>
+                <Link to={'/'}><button>Home</button></Link>
                 <table>
                     <thead>
                         <tr>
@@ -52,7 +52,7 @@ class Patient extends React.Component {
                     </thead>
                 </table>
                 <h3>Patient's Encounters</h3>
-                <Link to={{pathname: '/add/encounter', state: this.state.patient.id}}>Add Encounter</Link>
+                <Link to={{pathname: '/add/encounter', state: this.state.patient.id}}><button>Add Encounter</button></Link>
                 <table>
                     <thead>
                         <tr>
@@ -66,9 +66,9 @@ class Patient extends React.Component {
                             <td>{p.admitted_at}</td>
                             <td>{p.discharged_at ? p.discharged_at : "No discharge time specified"}</td>
                             <td>
-                                <Link to={{pathname: `/encounter/${p.id}`, state: {encounter: p}}}>Show</Link>
-                                <Link to={{pathname: `/encounter/edit/${p.id}`, state: {encounter: p}}}>Edit</Link>
-                                <Link to={{pathname: `/encounter/${p.id}/delete`, state: {encounter: p, type: "encounter"}}}>Destroy</Link>
+                                <Link to={{pathname: `/encounter/${p.id}`, state: {encounter: p}}}><button>Show</button></Link>
+                                <Link to={{pathname: `/encounter/edit/${p.id}`, state: {encounter: p}}}><button>Edit</button></Link>
+                                <Link to={{pathname: `/encounter/${p.id}/delete`, state: {encounter: p, type: "encounter"}}}><button>Destroy</button></Link>
                             </td>
                         </tr>)}
                     </thead>

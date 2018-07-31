@@ -41,8 +41,8 @@ class EncounterDetails extends React.Component {
                             <td>{this.props.location.state.encounter.room ? this.props.location.state.encounter.room : "No room specified"}</td>
                             <td>{this.props.location.state.encounter.bed ? this.props.location.state.encounter.bed : "No bed specified"}</td>
                             <td>
-                                <Link to={{pathname: `/encounter/edit/${this.props.location.state.encounter.id}`, state: {encounter: this.props.location.state.encounter}}}>Edit</Link>
-                                <Link to={{pathname: `/encounter/${this.props.location.state.encounter.id}/delete`, state: {encounter: this.props.location.state.encounter, type: "encounter"}}}>Destroy</Link>
+                                <Link to={{pathname: `/encounter/edit/${this.props.location.state.encounter.id}`, state: {encounter: this.props.location.state.encounter}}}><button>Edit</button></Link>
+                                <Link to={{pathname: `/encounter/${this.props.location.state.encounter.id}/delete`, state: {encounter: this.props.location.state.encounter, type: "encounter"}}}><button>Destroy</button></Link>
                             </td>
                         </tr>
                     </thead>

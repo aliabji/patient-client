@@ -99,34 +99,48 @@ class PatientEdit extends React.Component {
         return(
             <div>
                 <h2>Edit Patient</h2>
-                <Link to={'/'} >Home</Link>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        First Name (Required):
-                        <input type="text" name="first" placeholder="First Name" value={this.state.first} onChange={this.firstChange}required />
-                    </label>
-                    <label>
-                        Middle Name (Required):
-                        <input type="text" name="middle" placeholder="Middle Name" value={this.state.middle} onChange={this.middleChange} required/>
-                    </label>
-                    <label>
-                        Last Name (Required):
-                        <input type="text" name="last" placeholder="Last Name" value={this.state.last} onChange={this.lastChange} required />
-                    </label>
-                    <label>
-                        Weight in KG:
-                        <input type="number" name="weight" placeholder="Weight in KG" value={this.state.weight} onChange={this.weightChange}/>
-                    </label>
-                    <label>
-                        Height in CM:
-                        <input type="number" name="height" placeholder="Height in CM" value={this.state.height} onChange={this.heightChange}/>
-                    </label>
-                    <label>
-                        MRN (Required):
-                        <input type="number" name="MRN" placeholder="MRN" value={this.state.MRN} onChange={this.mrnChange} required />
-                    </label>
-                    <button>Submit Data</button>
-                </form>
+                <div className="form">
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="form-field">
+                            <label>
+                                First Name (Required):
+                                <input type="text" name="first" placeholder="First Name" value={this.state.first} onChange={this.firstChange}required />
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                Middle Name (Required):
+                                <input type="text" name="middle" placeholder="Middle Name" value={this.state.middle} onChange={this.middleChange} required/>
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                Last Name (Required):
+                                <input type="text" name="last" placeholder="Last Name" value={this.state.last} onChange={this.lastChange} required />
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                Weight in KG:
+                                <input type="number" name="weight" placeholder="Weight in KG" value={this.state.weight} onChange={this.weightChange}/>
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                Height in CM:
+                                <input type="number" name="height" placeholder="Height in CM" value={this.state.height} onChange={this.heightChange}/>
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                MRN (Required):
+                                <input type="number" name="MRN" placeholder="MRN" value={this.state.MRN} onChange={this.mrnChange} required />
+                            </label>
+                        </div>
+                        <button>Submit Data</button>
+                        <Link to={'/'} ><button>Cancel and return home</button></Link>
+                    </form>
+                </div>
             </div>
         )
     }

@@ -103,35 +103,49 @@ class EncounterDetails extends React.Component {
     render() {
         return(
             <div>
-                <h2>Add a new encounter</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Visit Number (Required):
-                        <input type="number" name="visit_number" placeholder="Visit Number" value={this.state.visit_number} onChange={this.visitChange} required />
-                    </label>
-                    <label>
-                        Admitted At (Required):
-                        <input type="datetime-local" name="admitted_at" placeholder="Admitted At" value={this.state.admitted_at} onChange={this.admittedChange} required/>
-                    </label>
-                    <label>
-                        Discharged At:
-                        <input type="datetime-local" name="discharged_at" placeholder="Discharged Ar" value={this.state.discharged_at} onChange={this.dischargedChange}/>
-                    </label>
-                    <label>
-                        Location:
-                        <input type="text" name="location" placeholder="Location" value={this.state.location} onChange={this.locationChange}/>
-                    </label>
-                    <label>
-                        Room:
-                        <input type="text" name="room" placeholder="Room" value={this.state.room} onChange={this.roomChange}/>
-                    </label>
-                    <label>
-                        Bed:
-                        <input type="text" name="bed" placeholder="Bed" value={this.state.bed} onChange={this.bedChange} />
-                    </label>
-                    <button>Send data!</button>
-                    <Link to={{pathname: `/`}}>Cancel and return home</Link>
-                </form>
+                <h2>Edit Encounter</h2>
+                <div className="form">
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="form-field">
+                            <label>
+                                Visit Number (Required):
+                                <input type="number" name="visit_number" placeholder="Visit Number" value={this.state.visit_number} onChange={this.visitChange} required />
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                Admitted At (Required):
+                                <input type="datetime-local" name="admitted_at" placeholder="Admitted At" value={this.state.admitted_at} onChange={this.admittedChange} required/>
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                Discharged At:
+                                <input type="datetime-local" name="discharged_at" placeholder="Discharged Ar" value={this.state.discharged_at} onChange={this.dischargedChange}/>
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                Location:
+                                <input type="text" name="location" placeholder="Location" value={this.state.location} onChange={this.locationChange}/>
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                Room:
+                                <input type="text" name="room" placeholder="Room" value={this.state.room} onChange={this.roomChange}/>
+                            </label>
+                        </div>
+                        <div className="form-field">
+                            <label>
+                                Bed:
+                                <input type="text" name="bed" placeholder="Bed" value={this.state.bed} onChange={this.bedChange} />
+                            </label>
+                        </div>
+                        <button>Submit</button>
+                        <Link to={{pathname: `/`}}><button>Cancel and return home</button></Link>
+                    </form>
+                </div>
             </div>
         )
     }

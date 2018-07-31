@@ -126,7 +126,7 @@ class AddPatient extends React.Component {
                             </label>
                         </div>
                         <button>Submit</button>
-                        <Link to={'/'} >Cancel and return home</Link>
+                        <Link to={'/'} ><button>Cancel and return home</button></Link>
                     </form>
                 </div>
             </div>
